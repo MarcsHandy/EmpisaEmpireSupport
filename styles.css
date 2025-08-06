@@ -215,3 +215,37 @@ textarea.cyber-input {
     margin-top: 4rem;
     padding: 2rem 0;
 }
+
+/* PRIVACY PAGE SPECIFIC STYLES */
+.privacy-section {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+.policy-article {
+    margin-bottom: 2.5rem;
+    border-left: 3px solid var(--neon-purple);
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.policy-article h3 {
+    margin-top: 0;
+    font-size: 1.3rem;
+}
+
+.policy-article::before {
+    content: "■";
+    position: absolute;
+    left: -0.7rem;
+    color: var(--neon-cyan);
+    font-size: 1.5rem;
+}
+
+/* LINK FROM MAIN SITE */
+.add-privacy-link {
+    display: block;
+    text-align: center;
+    margin: 3rem 0;
+}
