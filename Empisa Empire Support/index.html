@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMPISA EMPIRE // SUPPORT TERMINAL</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="scanlines"></div>
+    <div class="glitch-overlay" data-text="EMPISA_EMPIRE"></div>
+
+    <div class="container">
+        <header class="header">
+            <h1 class="neon-text flicker">// EMPISA_EMPIRE_SUPPORT_TERMINAL</h1>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#contact" class="neon-link">[CONTACT]</a></li>
+                    <li><a href="#faq" class="neon-link">[FAQS]</a></li>
+                    <li><a href="#troubleshooting" class="neon-link">[TROUBLESHOOT]</a></li>
+                    <li><a href="#resources" class="neon-link">[RESOURCES]</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="main-content">
+            <section id="contact" class="terminal-block">
+                <h2 class="neon-cyan section-title">> CONTACT_PROTOCOLS</h2>
+                <div class="grid-container">
+                    <div class="terminal-card contact-card">
+                        <h3 class="neon-pink">DIRECT_LINK</h3>
+                        <p class="glitch-text">support@empisaempire.com</p>
+                        <button class="neon-button" onclick="window.location.href='mailto:support@empisaempire.com'">
+                            INITIATE_MAIL.EXE
+                        </button>
+                    </div>
+                    
+                    <div class="terminal-card form-card">
+                        <h3 class="neon-pink">SUPPORT_FORM</h3>
+                        <form id="supportForm" class="cyber-form">
+                            <div class="form-group">
+                                <label for="name" class="neon-label">USER_ID:</label>
+                                <input type="text" id="name" class="cyber-input" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email" class="neon-label">NETWORK_ID:</label>
+                                <input type="email" id="email" class="cyber-input" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="issue" class="neon-label">ERROR_REPORT:</label>
+                                <textarea id="issue" class="cyber-input" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="neon-button submit-btn">
+                                TRANSMIT_REQUEST
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <div id="formResponse" class="response-terminal"></div>
+            </section>
+
+            <!-- Other sections maintain same structure -->
+        </main>
+
+        <footer class="footer">
+            <p class="flicker-slow">// SYSTEM_STATUS: ONLINE</p>
+            <p>© 2077 EMPISA_EMPIRE // ALL_RIGHTS_RESERVED</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

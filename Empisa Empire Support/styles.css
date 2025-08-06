@@ -1,0 +1,217 @@
+/* CYBERPUNK CORE STYLES */
+:root {
+    --neon-cyan: #0ff0fc;
+    --neon-pink: #ff2a6d;
+    --neon-purple: #d300c5;
+    --matrix-green: #00ff41;
+    --dark-bg: #0d0d1a;
+    --darker-bg: #050510;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--matrix-green);
+    font-family: 'Rajdhani', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* SCANLINE EFFECT */
+.scanlines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(0, 255, 65, 0.05) 1px,
+        transparent 2px
+    );
+    pointer-events: none;
+    z-index: 100;
+}
+
+/* GLITCH TEXT EFFECT */
+.glitch-text {
+    position: relative;
+}
+.glitch-text::before, .glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.glitch-text::before {
+    color: var(--neon-pink);
+    animation: glitch 1s infinite;
+}
+.glitch-text::after {
+    color: var(--neon-cyan);
+    animation: glitch 0.5s infinite reverse;
+}
+
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+}
+
+/* TERMINAL BLOCKS */
+.terminal-block {
+    background: rgba(13, 13, 26, 0.8);
+    border: 1px solid var(--neon-cyan);
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.3);
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    position: relative;
+}
+.terminal-block::before {
+    content: ">";
+    position: absolute;
+    left: -15px;
+    top: -15px;
+    color: var(--neon-pink);
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* NEON ELEMENTS */
+.neon-text {
+    color: var(--matrix-green);
+    text-shadow: 0 0 5px var(--matrix-green);
+    font-family: 'Orbitron', sans-serif;
+}
+.neon-cyan { color: var(--neon-cyan); text-shadow: 0 0 5px var(--neon-cyan); }
+.neon-pink { color: var(--neon-pink); text-shadow: 0 0 5px var(--neon-pink); }
+
+/* FLICKER ANIMATION */
+.flicker {
+    animation: flicker 3s infinite alternate;
+}
+@keyframes flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: 1;
+        text-shadow: 0 0 5px var(--matrix-green);
+    }
+    20%, 24%, 55% {
+        opacity: 0.5;
+        text-shadow: none;
+    }
+}
+
+/* CYBER FORM STYLES */
+.cyber-input {
+    background: rgba(0, 0, 20, 0.5);
+    border: 1px solid var(--neon-purple);
+    color: var(--neon-cyan);
+    padding: 0.5rem;
+    font-family: 'Rajdhani', sans-serif;
+}
+.cyber-input:focus {
+    outline: none;
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 10px var(--neon-cyan);
+}
+
+.neon-button {
+    background: transparent;
+    border: 1px solid var(--neon-pink);
+    color: var(--neon-pink);
+    padding: 0.5rem 1rem;
+    font-family: 'Orbitron', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.neon-button:hover {
+    background: var(--neon-pink);
+    color: var(--dark-bg);
+    box-shadow: 0 0 15px var(--neon-pink);
+}
+
+/* ===== LAYOUT IMPROVEMENTS ===== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1.5rem 0;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.terminal-card {
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Form Improvements */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.cyber-input {
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 0.8rem;
+}
+
+textarea.cyber-input {
+    min-height: 120px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+/* Response Terminal */
+.response-terminal {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    margin-top: 4rem;
+    padding: 2rem 0;
+}
